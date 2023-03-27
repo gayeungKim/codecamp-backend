@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  // 저장하면 프리티어가 바로 적용
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // prettier 포멧 적용 설정
+}
