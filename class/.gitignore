@@ -25,11 +25,11 @@ logs/debug.log
 logs/*.c
 
 # logs 폴더 바로 안, 또는 그 안의 다른 폴더(들) 안의 debug.log
-logs/**/debug.log
-.development.env
-package-lock.json
-package.json
+# logs/**/debug.log
+# .development.env
+# package-lock.json
+# package.json
 
 
 
-16-01-mysqlRelation
+16-01-**
