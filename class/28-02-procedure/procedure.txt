@@ -1,0 +1,20 @@
+show databases;
+
+use myproject_product; # 사용할 데이터베이스 지정(입력 쿼리가 실행될 db)
+
+select * from board;
+
+show procedure status;
+
+create procedure mydummydata()
+begin
+	declare i int default 1;
+	while i <= 5000000 do
+		insert into board(writer, title, contents) values('짱구', rand(), '내용');
+		set i = i + 1;
+	end while;
+end;
+
+-- drop procedure mydummydata; #procedure 삭제
+call mydummydata(); # procedure 호출 
+
