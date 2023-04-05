@@ -1,0 +1,22 @@
+보일러 플레이트 : 초기 폴더구조
+
+                src : 소스코드(api)
+               test : 테스트(코드검사)하는 파일
+       .eslintrc.js : 린터, 코딩문법규칙('=='금지 등) 정하기
+         .gitignore : git에서 제외할 파일
+        .prettierrc : 포멧터, 코딩정리규칙(줄바꿈 등) 정하기
+      nest-cli.json : Nest 설정파일
+       package.json : 기본 메뉴얼
+          README.md : 상세 설명서
+
+tsconfig.build.json : 타입스크립트 설정파일-1
+tsconfig.json : 타입스크립트 설정파일-2
+yarn.lock : 버전 잠금 파일,
+
+타입스크립트 : 자비스크립트의 타입을 강제시키는 언어
+let aaa:String ="안녕하세요"
+Interface IPfofile{
+  name: string;
+  age: number;
+}// 객체
+let profile:IProfile={name:"철수", age:13}

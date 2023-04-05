@@ -1,0 +1,7 @@
+마이크로서비스
+- Microservice
+- Nestjs 폴더 나누기, DB 나누기
+    - 일정 기준으로 폴더를 세부적으로 나눔!
+- 이전까지는 여러 작은 모듈을 하나의 모듈(app.module)로 묶었음.(Monolithic
+    Architecture) 서비스가 커질 경우 비효율적. Microservice가 이를 해결할 수 있음
+- 하나의 프로젝트를 여러 작은 서비스로 분리하여 개발하고 
