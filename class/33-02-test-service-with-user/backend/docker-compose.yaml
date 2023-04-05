@@ -1,0 +1,60 @@
+version: '3.7'
+
+services:
+  my-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/myfolder/src
+    ports:
+      - 3000:3000
+
+  my-database:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'mydocker03'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - 3306:3306
+
+  my-redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  elasticsearch:
+    image: elasticsearch:7.17.0
+    environment:
+      # 저장 방식
+      discovery.type: single-node
+    ports:
+      # default port
+      - 9200:9200
+
+  # logstash 설치 후 위치를 확인하면 /usr/share/logstash이기 때문에
+  # logstash.conf, Mysql-Connector-java-8.0.28.jar 파일을 해당 위치에 넣어줘야함
+  # logstash:
+  #   image: logstash:7.17.0
+  #   volumes:
+  #     - ./elk/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+  #     - ./elk/logstash/mysql-connector-java-8.0.28.jar:/usr/share/logstash/mysql-connector-java-8.0.28.jar
+
+  # 시연을 위해 임시 사용
+  # kibana는 elasticsearch의 주소가 필요
+  # kibana:
+  #   image: kibana:7.17.0
+  #   environment:
+  #     ELASTICSERCH_UTL: http://elasticsearch:9200
+  #     ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+  #   ports:
+  #     # defualt 포트
+  #     - 5601:5601
+
+# elasticsearch, logstash, kibana는 하나의 쌍으로 동작하기 때문에
+# 각각의 설정 파일에서 서로 연결할 때 이름이 기본값으로 정해져 있음
+# (변경하지 않는 것이 좋음)
+
+# logstash
+# MySQL의 저장된 데이터를 뽑아서 elasticsearch에 저장하는 역할
+# (MySQL에 접속해서 데이터를 추출하는 잡업을 Data Polling이라 함)
