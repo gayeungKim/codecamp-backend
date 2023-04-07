@@ -1,0 +1,7 @@
+{
+  "name": "03-01-Node.js(1)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module"
+}
