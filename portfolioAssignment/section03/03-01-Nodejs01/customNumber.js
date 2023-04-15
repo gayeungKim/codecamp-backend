@@ -28,6 +28,6 @@ export function custom(validNumber){
     let customedNumber = customNumber.substr(0,8) + "******";
 
     // 암호화된 주민번호 출력하고 return
-    console.log("암호화된 주민번호: "+customedNumber);
+    // console.log("암호화된 주민번호: "+customedNumber);
     return customedNumber;
 }

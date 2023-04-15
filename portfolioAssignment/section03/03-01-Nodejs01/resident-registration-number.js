@@ -13,7 +13,8 @@ function customRegistrationNumber(inputregistrationNumber){
     if(!validNumber){ // return 값이 없다면
         return; // validNumber 함수를 실행하지 않을 것
     } else { // return 값이 있다면
-        custom(validNumber); // validNumber 함수를 실행할 것
+        const customResulte = custom(validNumber); // validNumber 함수를 실행할 것
+        console.log(`암호화된 주민번호 :  + ${custom} `);
     }
 }
 
