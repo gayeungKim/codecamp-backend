@@ -1,0 +1,33 @@
+api 요청 이후 백엔드에서 로직을 수행할 때 서버가 구현되어 있어야 함.
+Express는 이 서버를 개발할 수 있는 환경을 제공해 주는 프레임워크
+
+- 라이브러리: 하나의 도구라고 생각한다면
+- 프레임워크: 도구의 집합 개념
+
+- package.json: 서버를 구동하는데 필요한 모듈 및 라이브러리를 모아둔 문서
+- node_modules: 실질적으로 서버를 구동시키기 위한 파일,
+    - 용량 문제로 이는 git에 올리지 않고, 대신 package.json을 올림!
+    - 따라서 이는 git에 올라가서는 안되기 때문에 작업 폴더 최상단에 .gitignore 파일을 만들어 관리!
+
+// ============================= 기본 틀 =============================
+import express from 'express'
+// 불러온 express를 실행해 app이라는 변수에 담음
+const app = express()
+
+// get 요청이 들어왔을 경우 "Hello World"라는 응답을 보내주는 api
+app.get('/', function (req, res) {
+  // api 요청시 반환값
+  res.send('Hello World')
+  // api 요청시 console에 응답!
+  console.log("get api request")
+})
+
+// port Number: 0-65535
+// app.listen(3000, () => {}) : 3000번 port에서 서버가 24시간 실행
+app.listen(3000)
+
+// ===================================================================
+
+만약 포트 중복이 일어났을 경우
+- netstat -anv | grep LISTEN : 사용중인 port 조회
+- kill -9 프로세스_아이디 : 해당 프로그램 종료 => port가 빔

@@ -1,0 +1,23 @@
+swagger: rest api를 쉽게 문서화하고 테스트를 할 수 있도록 도와주는 도구
+
+// =========================== 기본 틀 =========================
+// api 설명
+/**
+ * @openapi
+ * /:
+ *   get:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Returns a mysterious string.
+ */
+
+// 실제 api
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// =============================================================
+
+명세서 작성 양식 및 방법
+https://swagger.io/docs/specification/describing-parameters/
